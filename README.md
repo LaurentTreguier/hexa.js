@@ -26,6 +26,8 @@ Usage is simple; your html code should look like this :
       See the second content
     </button>
   </div>
+  
+  <script src = "hexa.js"></script> <!-- always incule hexa.js at th the html code -->
 [...]
 ```
 
