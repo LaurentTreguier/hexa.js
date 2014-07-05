@@ -4,7 +4,7 @@
 
 Hexa.CELL_FACE_SIZE    = 100;                      // The size of the cells' faces. Default is 100
 Hexa.CELL_FILL_COLOR   = "rgb(127, 127, 127)";     // The color used for filling the cells. Default is grey (127, 127, 127)
-Hexa.CELL_SHADOW_COLOR = "rgb(255, 0  , 0  )";     // The color of the cells' shadows. Default is black (255, 0, 0)
+Hexa.CELL_SHADOW_COLOR = "rgb(255, 0  , 0  )";     // The color of the cells' shadows. Default is red (255, 0, 0)
 Hexa.CELL_SHADOW_BLUR  = Hexa.CELL_FACE_SIZE / 10; // The blur of the cells' shadows. Default is Hexa.CELL_FACE_SIZE / 10 but big values are funny to try
 Hexa.DELAY_CELLS       = 10;                       // The delay between two cells opping. Default is 10 (ms)
 
