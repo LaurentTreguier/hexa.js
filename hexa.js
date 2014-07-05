@@ -1,14 +1,22 @@
+/* ============================= */
+/* ======== User values ======== */
+/* ============================= */
+
+Hexa.CELL_FACE_SIZE    = 100;                      // The size of the cells' faces. Default is 100
+Hexa.CELL_FILL_COLOR   = "rgb(127, 127, 127)";     // The color used for filling the cells. Default is grey (127, 127, 127)
+Hexa.CELL_SHADOW_COLOR = "rgb(255, 0  , 0  )";     // The color of the cells' shadows. Default is black (255, 0, 0)
+Hexa.CELL_SHADOW_BLUR  = Hexa.CELL_FACE_SIZE / 10; // The blur of the cells' shadows. Default is Hexa.CELL_FACE_SIZE / 10 but big values are funny to try
+Hexa.DELAY_CELLS       = 10;                       // The delay between two cells opping. Default is 10 (ms)
+
 /* =========================== */
 /* ======== Constants ======== */
 /* =========================== */
 
-Hexa.FACE_SIZE     = 100;
-Hexa.CELL_WIDTH    = Hexa.FACE_SIZE   / 2 * Math.sqrt(3);
+Hexa.CELL_WIDTH    = Hexa.CELL_FACE_SIZE   / 2 * Math.sqrt(3);
 Hexa.CELL_WIDTH_2  = Hexa.CELL_WIDTH  / 2;
-Hexa.CELL_HEIGHT   = Hexa.FACE_SIZE;
+Hexa.CELL_HEIGHT   = Hexa.CELL_FACE_SIZE;
 Hexa.CELL_HEIGHT_4 = Hexa.CELL_HEIGHT / 4;
 
-Hexa.DELAY_CELLS   = 0;
 Hexa.DELAY_STATE   = 100;
 
 /* =========================== */
@@ -71,7 +79,7 @@ Hexa.numberOf = function(string)
     return string.slice(0, string.length - 2);
 }
 
-Hexa.rgb = function(r, g, b)
+/*Hexa.rgb = function(r, g, b)
 {
     return "rgb(" + r + "," + g + "," + b + ")";
 }
@@ -79,7 +87,7 @@ Hexa.rgb = function(r, g, b)
 Hexa.rgba = function(r, g, b, a)
 {
     return "rgba(" + r + "," + g + "," + b + "," + a + ")";
-}
+}*/
 
 Hexa.rand = function(min, max)
 {
@@ -252,16 +260,16 @@ Hexa.Wall = function(target, id)
             _cells[i][j] = false;
     }
     
-    _canvas.width          = Hexa.numberOf(Hexa.getStyle(target).width);
+    _canvas.width          = Hexa.numberOf(Hexa.getStyle(target).width );
     _canvas.height         = Hexa.numberOf(Hexa.getStyle(target).height);
     _canvas.style.position = "absolute";
     _canvas.style.left     = "0px";
     _canvas.style.top      = "0px";
     target.appendChild(_canvas);
     
-    _ctx.fillStyle   = Hexa.rgb(127, 127, 127);
-    _ctx.shadowColor = Hexa.rgb(255, 0  , 0  );
-    _ctx.shadowBlur  = Hexa.FACE_SIZE / 10;
+    _ctx.fillStyle   = Hexa.CELL_FILL_COLOR;
+    _ctx.shadowColor = Hexa.CELL_SHADOW_COLOR;
+    _ctx.shadowBlur  = Hexa.CELL_SHADOW_BLUR;
 }
 
 /* ========================== */
