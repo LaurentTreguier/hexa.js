@@ -2,11 +2,11 @@
 /* ======== User values ======== */
 /* ============================= */
 
-Hexa.CELL_FACE_SIZE    = 100;                      // The size of the cells' faces. Default is 100
+Hexa.CELL_FACE_SIZE    = 150;                      // The size of the cells' faces. Default is 100
 Hexa.CELL_FILL_COLOR   = "rgb(127, 127, 127)";     // The color used for filling the cells. Default is grey (127, 127, 127)
 Hexa.CELL_SHADOW_COLOR = "rgb(255, 0  , 0  )";     // The color of the cells' shadows. Default is red (255, 0, 0)
 Hexa.CELL_SHADOW_BLUR  = Hexa.CELL_FACE_SIZE / 10; // The blur of the cells' shadows. Default is Hexa.CELL_FACE_SIZE / 10 but big values are funny to try
-Hexa.DELAY_CELLS       = 10;                       // The delay between two cells opping. Default is 10 (ms)
+Hexa.DELAY_CELLS       = 25;                       // The delay between two cells opping. Default is 10 (ms)
 
 /* =========================== */
 /* ======== Constants ======== */
@@ -27,6 +27,8 @@ function Hexa() {}
 
 Hexa.init = function()
 {
+    document.removeEventListener("DOMContentLoaded", Hexa.init);
+    
     var targets = document.getElementsByClassName("hexa-target");
     var menus   = document.getElementsByClassName("hexa-menu"  );
     var buttons;
@@ -276,4 +278,4 @@ Hexa.Wall = function(target, id)
 /* ======== The init ======== */
 /* ========================== */
 
-Hexa.init();
+document.addEventListener("DOMContentLoaded", Hexa.init, false);
