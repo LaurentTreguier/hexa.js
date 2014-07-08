@@ -27,7 +27,7 @@ Usage is simple; your html code should look like this :
     </button>
   </div>
   
-  <script src = "hexa.js"></script> <!-- always incule hexa.js at the end of the html code -->
+  <script src = "hexa.js"></script> <!-- don't forget to include hexa.js in your code ! -->
 [...]
 ```
 
