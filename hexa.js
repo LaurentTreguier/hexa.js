@@ -23,11 +23,9 @@ Hexa.DELAY_STATE   = 100;                                      // The delay betw
 /* ======== Functions ======== */
 /* =========================== */
 
-function Hexa() {} // The name space for the entire file.
-
-Hexa.init = function() // This function looks for the targets and menus in the HTML code.
+function Hexa() // This function looks for the targets and menus in the HTML code and serves as namespace for the entire file.
 {
-    document.removeEventListener("DOMContentLoaded", Hexa.init);
+    document.removeEventListener("DOMContentLoaded", Hexa);
     
     var targets = document.getElementsByClassName("hexa-target");
     var menus   = document.getElementsByClassName("hexa-menu"  );
@@ -268,4 +266,4 @@ Hexa.Wall = function(target, id)
 /* ======== The init ======== */
 /* ========================== */
 
-document.addEventListener("DOMContentLoaded", Hexa.init, false); // Wait for the entire page to be loaded before doing anything.
+document.addEventListener("DOMContentLoaded", Hexa, false); // Wait for the entire page to be loaded before doing anything.
