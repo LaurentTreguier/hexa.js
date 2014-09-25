@@ -12,10 +12,10 @@ Hexa.DELAY_CELLS       = 25;                       // The delay between two cell
 /* ======== Constants ======== */
 /* =========================== */
 
-Hexa.CELL_WIDTH    = Hexa.CELL_FACE_SIZE   / 2 * Math.sqrt(3); // The width of a cell (a cell is an hexagon).
-Hexa.CELL_WIDTH_2  = Hexa.CELL_WIDTH  / 2;                     // Half of the width (it's used each time a cell is drawn, so having an already computed value helps).
+Hexa.CELL_WIDTH    = Hexa.CELL_FACE_SIZE / 2 * Math.sqrt(3);   // The width of a cell (a cell is an hexagon).
+Hexa.CELL_WIDTH_2  = Hexa.CELL_WIDTH     / 2;                  // Half of the width (it's used each time a cell is drawn, so having an already computed value helps).
 Hexa.CELL_HEIGHT   = Hexa.CELL_FACE_SIZE;                      // The height of a cell.
-Hexa.CELL_HEIGHT_4 = Hexa.CELL_HEIGHT / 4;                     // The quarter of a cell (again, it's because it's used frequently).
+Hexa.CELL_HEIGHT_4 = Hexa.CELL_HEIGHT    / 4;                  // The quarter of a cell (again, it's because it's used frequently).
 
 Hexa.DELAY_STATE   = 100;                                      // The delay between the 2 states of a drawn cell (half drawn and fully drawn).
 
