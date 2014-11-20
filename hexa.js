@@ -56,7 +56,7 @@ Hexa.hideWall = function(event) // Triggers targets switching to another content
 {
     Hexa.targets[event.detail].switchTo(Hexa.currentRequest);
     Hexa.walls  [event.detail].hide();
-}
+};
 
 Hexa.switchTo = function(index) // Switches content for every wall.
 {
@@ -67,22 +67,22 @@ Hexa.switchTo = function(index) // Switches content for every wall.
     
     document.removeEventListener("hexa-wall-ready", Hexa.hideWall);
     document.addEventListener   ("hexa-wall-ready", Hexa.hideWall);
-}
+};
 
 Hexa.getStyle = function(element) // Returns the style of element (only serves as shortcut to an already existing function).
 {
     return window.getComputedStyle(element, null);
-}
+};
 
 Hexa.numberOf = function(string) // Returns the number from a length in CSS (cut out the "px").
 {
     return string.slice(0, string.length - 2);
-}
+};
 
 Hexa.rand = function(min, max) // Random integer between min and max.
 {
     return Math.floor(Math.random() * (max - min) + min);
-}
+};
 
 /* ========================= */
 /* ======== Classes ======== */
@@ -105,7 +105,7 @@ Hexa.Target = function(target)
         _index = index;
         
         _sections[_index].style.display = "initial";
-    }
+    };
     
     /* Init */
     
@@ -113,7 +113,7 @@ Hexa.Target = function(target)
         _sections[i].style.display = "none";
     
     this.switchTo(0);
-}
+};
 
 Hexa.Wall = function(target, id)
 {
@@ -156,7 +156,7 @@ Hexa.Wall = function(target, id)
             
             document.dispatchEvent(event); // Dispatch the event which indicates the wall is entirely visible.
         }
-    }
+    };
     
     var _hide = function() // Hides a single cell at a random place in order to make the wall invisible.
     {
@@ -181,7 +181,7 @@ Hexa.Wall = function(target, id)
             clearInterval(_timer);
             _ready = true;
         }
-    }
+    };
     
     var _drawCell = function(x, y, bool, alpha) // Draws a single cell. The current pattern is an hexagon (the prettiest tiling polygon IMO).
     {
@@ -216,7 +216,7 @@ Hexa.Wall = function(target, id)
         
         _ctx.closePath();
         _ctx.fill();
-    }
+    };
     
     this.show = function() // Draws the entire wall.
     {
@@ -225,7 +225,7 @@ Hexa.Wall = function(target, id)
             _timer = setInterval(_show, Hexa.DELAY_CELLS);
             _ready = false;
         }
-    }
+    };
     
     this.hide = function() // Hides the entire wall.
     {
@@ -234,7 +234,7 @@ Hexa.Wall = function(target, id)
             _timer = setInterval(_hide, Hexa.DELAY_CELLS);
             _ready = false;
         }
-    }
+    };
     
     /* Init */
     
@@ -260,7 +260,7 @@ Hexa.Wall = function(target, id)
     _ctx.fillStyle   = Hexa.CELL_FILL_COLOR;
     _ctx.shadowColor = Hexa.CELL_SHADOW_COLOR;
     _ctx.shadowBlur  = Hexa.CELL_SHADOW_BLUR;
-}
+};
 
 /* ========================== */
 /* ======== The init ======== */
