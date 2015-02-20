@@ -112,6 +112,9 @@ Hexa.Target = function(target)
     for(var i = 0; i < _sections.length; i++)
         _sections[i].style.display = "none";
     
+    if(Hexa.getStyle(_target).position === "static")
+        _target.style.position = "relative";
+    
     this.switchTo(0);
 };
 
@@ -253,8 +256,8 @@ Hexa.Wall = function(target, id)
     _canvas.width          = Hexa.numberOf(Hexa.getStyle(target).width );
     _canvas.height         = Hexa.numberOf(Hexa.getStyle(target).height);
     _canvas.style.position = "absolute";
-    _canvas.style.left     = "0px";
-    _canvas.style.top      = "0px";
+    _canvas.style.left     = "0";
+    _canvas.style.top      = "0";
     target.appendChild(_canvas);
     
     _ctx.fillStyle   = Hexa.CELL_FILL_COLOR;
